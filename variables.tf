@@ -151,3 +151,9 @@ variable "tls_security_policy" {
   type        = string
   default     = null
 }
+
+variable "domain_access_policy" {
+  description = "IAM policy document specifying the access policies for the domain. If null, a default policy will be used if applicable."
+  type        = string
+  default     = null
+}

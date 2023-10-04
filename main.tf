@@ -101,6 +101,6 @@ resource "aws_elasticsearch_domain_policy" "es_management_access" {
   count = false == local.inside_vpc ? 1 : 0
 
   domain_name     = local.domain_name
-  access_policies = data.aws_iam_policy_document.es_management_access[0].json
+  access_policies = coalesce(var.domain_access_policy, data.aws_iam_policy_document.es_management_access[0].json)
 }
 

@@ -48,4 +48,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
+# Common IDEs local folders and files
+.idea/
+.vscode/
