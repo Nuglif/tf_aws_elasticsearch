@@ -31,6 +31,12 @@ resource "aws_elasticsearch_domain" "es" {
 
   depends_on = [aws_iam_service_linked_role.es]
 
+  timeouts {
+    create = "190m"
+    update = "60m"
+    delete = "30m"
+  }
+
   domain_name           = local.domain_name
   elasticsearch_version = var.es_version
 
